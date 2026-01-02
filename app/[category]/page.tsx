@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CATEGORIES, getCategory, getItems } from "@/lib/data";
+import { CATEGORIES, getCategory, getItems, Item } from "@/lib/data";
 import GridValueView from "@/components/layout-views/GridValueView";
 import ListIndexView from "@/components/layout-views/ListIndexView";
 import SectionalView from "@/components/layout-views/SectionalView";
@@ -44,7 +44,7 @@ export default async function CategoryPage({ params }: PageProps) {
   );
 }
 
-function renderLayout(layout: string, items: any[]) {
+function renderLayout(layout: string, items: Item[]) {
   switch (layout) {
     case 'list':
       return <ListIndexView items={items} />;
