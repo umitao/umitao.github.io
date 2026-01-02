@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  
   --font-inter: var(--font-inter);
   --font-playfair: var(--font-playfair);
 

@@ -15,35 +15,45 @@ export interface Item {
   subtitle?: string;  // e.g., "1999" for Movies, "Chemistry" for Formulas
   group?: string;     // OPTIONAL: e.g., "Love", "Hate", "Hardware", "Software"
   rating?: string;    // e.g., "10/10", "Masterpiece"
-  link?: string;
+  
+  // NEW FIELDS
+  story?: string;     // Personal story/markdown
+  images?: string[];  // Array of image paths
+  link?: string;      // External URL
 }
 
 export const CATEGORIES: Category[] = [
-  // --- Science & Logic (Slate-900) ---
-  { id: 'molecules', label: 'Molecules', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'formulas', label: 'Formulas', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'time', label: 'Points in Time', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'software', label: 'Software', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'sections' },
-  { id: 'products', label: 'Products', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'tech', label: 'Tech & Code', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'grid' }, 
-  { id: 'cars', label: 'Cars', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'brands', label: 'Brands', color: 'bg-slate-900 group-hover:bg-neutral-700', layout: 'sections' },
+  // --- Theme 1: Deep Blue (Logic/Science) ---
+  // Assigned: Molecules, Formulas, Tech, Software, Products, Cars, Brands
+  { id: 'molecules', label: 'Molecules', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'list' },
+  { id: 'formulas', label: 'Formulas', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'list' },
+  { id: 'time', label: 'History', color: 'bg-gradient-to-br from-stone-800 to-neutral-900', layout: 'list' },
+  { id: 'software', label: 'Software', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'sections' },
+  { id: 'products', label: 'Products', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'grid' },
+  { id: 'tech', label: 'Tech & Code', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'grid' }, 
+  { id: 'cars', label: 'Cars', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'grid' },
+  { id: 'brands', label: 'Brands', color: 'bg-gradient-to-br from-slate-900 to-slate-950', layout: 'sections' },
 
-  // --- Art & Human (Zinc-800) ---
-  { id: 'music', label: 'Music', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'books', label: 'Books', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'movies', label: 'Movies', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'tvshows', label: 'TV Shows', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'games', label: 'Games', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'art', label: 'Art', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'grid' },
-  { id: 'people', label: 'People', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'sections' },
-  { id: 'quotes', label: 'Quotes', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'languages', label: 'Languages', color: 'bg-zinc-800 group-hover:bg-neutral-700', layout: 'list' },
+  // --- Theme 2: Subtle Pink (Creative/Art) ---
+  // Assigned: Music, Art, Movies, TV Shows, Games, Books
+  { id: 'music', label: 'Music', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'list' },
+  { id: 'books', label: 'Books', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'grid' },
+  { id: 'movies', label: 'Movies', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'grid' },
+  { id: 'tvshows', label: 'TV Shows', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'list' },
+  { id: 'games', label: 'Games', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'grid' },
+  { id: 'art', label: 'Art', color: 'bg-gradient-to-br from-rose-950 to-neutral-900', layout: 'grid' },
 
-  // --- Life & Travel (Stone-800) ---
-  { id: 'scents', label: 'Scents', color: 'bg-stone-800 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'gastronomy', label: 'Gastronomy', color: 'bg-stone-800 group-hover:bg-neutral-700', layout: 'list' },
-  { id: 'travel', label: 'Places', color: 'bg-stone-800 group-hover:bg-neutral-700', layout: 'grid' },
+  // --- Theme 3: Deep Teal (Sensory/Place) ---
+  // Assigned: Travel, Scents, Gastronomy
+  { id: 'scents', label: 'Scents', color: 'bg-gradient-to-br from-teal-950 to-neutral-900', layout: 'list' },
+  { id: 'gastronomy', label: 'Gastronomy', color: 'bg-gradient-to-br from-teal-950 to-neutral-900', layout: 'list' },
+  { id: 'travel', label: 'Places', color: 'bg-gradient-to-br from-teal-950 to-neutral-900', layout: 'grid' },
+  
+  // --- Theme 4: Warm Stone (Human/Time) ---
+  // Assigned: People, Quotes, Points in Time (moved here), Languages
+  { id: 'people', label: 'People', color: 'bg-gradient-to-br from-stone-800 to-neutral-900', layout: 'sections' },
+  { id: 'quotes', label: 'Quotes', color: 'bg-gradient-to-br from-stone-800 to-neutral-900', layout: 'list' },
+  { id: 'languages', label: 'Languages', color: 'bg-gradient-to-br from-stone-800 to-neutral-900', layout: 'list' },
 ];
 
 // --- Dummy Data ---
