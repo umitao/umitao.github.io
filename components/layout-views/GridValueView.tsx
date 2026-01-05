@@ -7,31 +7,51 @@ export default function GridValueView({ items }: { items: Item[] }) {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[1px] bg-neutral-800 p-[1px]">
+    <div className="grid grid-cols-2 gap-[1px] bg-neutral-800 p-[1px] sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
       {items.map((item) => {
         const isInternal = item.hasDetail;
         const isExternal = !!item.link;
-        const Component = isInternal ? Link : (isExternal ? "a" : "div");
-        const href = isInternal ? `/${item.categoryId}/${item.id}` : (isExternal ? item.link : undefined);
+        const Component = isInternal ? Link : isExternal ? "a" : "div";
+        const href = isInternal
+          ? `/${item.categoryId}/${item.id}`
+          : isExternal
+            ? item.link
+            : undefined;
         const target = isExternal ? "_blank" : undefined;
-        
+
         return (
-          <Component 
-            key={item.id} 
+          <Component
+            key={item.id}
             href={href as string}
             target={target}
-            className={`group relative aspect-square bg-neutral-900 p-6 flex flex-col justify-end transition-all hover:bg-neutral-800 ${isInternal || isExternal ? 'cursor-pointer hover:opacity-90' : ''}`}
+            className={`group relative flex aspect-square flex-col justify-end overflow-hidden bg-neutral-900 p-6 transition-all hover:bg-neutral-800 ${isInternal || isExternal ? "cursor-pointer hover:opacity-90" : ""}`}
+            style={{
+              backgroundImage: item.image ? `url(${item.image})` : undefined,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="z-10">
+            {/* Dark Overlay for text readability */}
+            <div
+              className={`absolute inset-0 transition-opacity duration-300 ${item.image ? "bg-black/60 group-hover:bg-black/40" : "bg-transparent"}`}
+            />
+
+            <div className="relative z-10">
               {item.subtitle && (
-                <p className="text-xs font-mono text-neutral-500 mb-1">{item.subtitle}</p>
+                <p className="mb-1 font-mono text-xs text-neutral-500">
+                  {item.subtitle}
+                </p>
               )}
-              <h3 className="text-xl font-serif text-neutral-100 group-hover:text-white decoration-neutral-500/0 underline-offset-4 transition-all group-hover:decoration-neutral-500/50">
+              <h3 className="font-serif text-xl text-neutral-100 decoration-neutral-500/0 underline-offset-4 transition-all group-hover:text-white group-hover:decoration-neutral-500/50">
                 {item.title}
-                {isExternal && <span className="inline-block ml-1 opacity-50 text-[10px] align-top">↗</span>}
+                {isExternal && (
+                  <span className="ml-1 inline-block align-top text-[10px] opacity-50">
+                    ↗
+                  </span>
+                )}
               </h3>
               {item.rating && (
-                <div className="mt-2 inline-block px-2 py-0.5 bg-emerald-900/30 text-emerald-400 text-xs border border-emerald-900/50">
+                <div className="mt-2 inline-block border border-emerald-900/50 bg-emerald-900/30 px-2 py-0.5 text-xs text-emerald-400">
                   {item.rating}
                 </div>
               )}

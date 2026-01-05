@@ -8,6 +8,7 @@ export interface BaseItem {
   subtitle?: string; // Common metadata, optional by default
   group?: string; // Common grouping, optional by default
   rating?: string; // Common rating, optional by default
+  image?: string; // Tile background image (Poster/Cover)
 }
 
 export interface MoleculeItem extends BaseItem {
