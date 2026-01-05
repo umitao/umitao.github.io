@@ -2,7 +2,7 @@ import { WebsiteItem } from "../types";
 
 export const websites: WebsiteItem[] = [
   {
-    id: "web-1",
+    id: "df1e0ae0-5fae-46ea-8baa-a741958304bb",
     categoryId: "websites",
     title: "Astronomy Picture of the Day",
     subtitle: "NASA",
@@ -10,7 +10,7 @@ export const websites: WebsiteItem[] = [
     story: "The old internet. Simple HTML, infinite wonder.",
   },
   {
-    id: "web-2",
+    id: "8cde4923-aab8-4510-b3b9-bf09de6e77db",
     categoryId: "websites",
     title: "Hacker News",
     subtitle: "Y Combinator",
