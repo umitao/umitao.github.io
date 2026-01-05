@@ -1,0 +1,90 @@
+import { BrandItem } from "../types";
+
+export const brands: BrandItem[] = [
+  {
+    id: "br-01",
+    categoryId: "brands",
+    title: "Red Bull",
+    group: "Love",
+    hasDetail: true,
+    story:
+      "Red Bull Gravity Challenge 2007. 2nd Place. Prize won: Red Bull as much as your weight. I measured around 60-65 kilos tops back then and I still do, but our friend who weighed around 100 kg sat on the scale, and it took 384 Red Bull cans to get him up in the scale.",
+  },
+  {
+    id: "br-02",
+    categoryId: "brands",
+    title: "BMW",
+    group: "Love",
+    story: "The E46 era. Pure driving dynamics.",
+  },
+  {
+    id: "br-03",
+    categoryId: "brands",
+    title: "Nike",
+    group: "Love",
+    story: 'Iconic design language and the "Just Do It" spirit.',
+  },
+  {
+    id: "br-04",
+    categoryId: "brands",
+    title: "Sony",
+    group: "Hate",
+    story: "The absolute masterclass in lifestyle marketing.",
+  },
+  {
+    id: "br-05",
+    categoryId: "brands",
+    title: "Sony",
+    group: "Love",
+    story: "Evil company.",
+  },
+  {
+    id: "br-fan",
+    categoryId: "brands",
+    title: "Fanatec",
+    group: "Sim Racing",
+    story: "German engineering for the sim.",
+  },
+  {
+    id: "br-mar",
+    categoryId: "brands",
+    title: "Martini",
+    group: "Heritage",
+    story: "Racing stripes and vermouth.",
+  },
+  {
+    id: "br-lock",
+    categoryId: "brands",
+    title: "Lockheed Martin",
+    group: "Aerospace",
+    story: "Skunk Works. The SR-71.",
+  },
+  {
+    id: "br-app",
+    categoryId: "brands",
+    title: "Apple",
+    group: "Tech",
+    story: "Ecosystem lock-in, but it works.",
+  },
+  {
+    id: "br-sony",
+    categoryId: "brands",
+    title: "Sony",
+    group: "Love",
+    story: "Engineering excellence.",
+  },
+  {
+    id: "br-lego",
+    categoryId: "brands",
+    title: "LEGO",
+    group: "Love",
+    story: "Systematic creativity.",
+  },
+  {
+    id: "br-hp",
+    categoryId: "brands",
+    title: "HP",
+    group: "Hate",
+    story: "Printers are the enemy.",
+  },
+];
