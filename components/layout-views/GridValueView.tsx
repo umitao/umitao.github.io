@@ -1,4 +1,4 @@
-import { Item } from "@/lib/data";
+import { AppItem as Item } from "@/src/types";
 import Link from "next/link";
 
 export default function GridValueView({ items }: { items: Item[] }) {

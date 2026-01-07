@@ -1,5 +1,5 @@
 import CategoryTile from "@/components/CategoryTile";
-import { CATEGORIES } from "@/lib/data";
+import { CATEGORIES } from "@/src/constants/categories";
 import VerificationSection from "@/src/components/VerificationSection";
 
 export default function Home() {

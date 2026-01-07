@@ -1,16 +1,3 @@
-// Remove conflicting import
-
-// Actually, Category is still defined here or should move to types?
-// The user asked to "Refactor the current AppItem interface... into src/types".
-// They didn't explicitly ask to move Category, but it makes sense to keep it cleanly.
-// However, to minimize breakage, I will re-export Item/AppItem from types, and Category definition can stay or move.
-// Let's look at the instruction: "Update the original entry point... to import allContent".
-
-import { AppItem } from "@/src/types";
-import { allContent } from "@/src/data";
-
-export * from "@/src/types"; // Re-export types for compatibility
-
 export type LayoutType = "grid" | "list" | "sections";
 
 export interface Category {
@@ -20,10 +7,6 @@ export interface Category {
   span?: number;
   layout: LayoutType;
 }
-
-// Re-exporting AppItem as Item for backward compatibility if needed,
-// or just aliasing it if the codebase uses 'Item'.
-export type Item = AppItem;
 
 export const CATEGORIES: Category[] = [
   // --- Theme 1: Deep Blue (Logic/Science) ---
@@ -167,12 +150,6 @@ export const CATEGORIES: Category[] = [
   },
 ];
 
-export const ITEMS: AppItem[] = allContent;
-
 export async function getCategory(slug: string): Promise<Category | undefined> {
   return CATEGORIES.find((c) => c.id === slug);
-}
-
-export async function getItems(categoryId: string): Promise<AppItem[]> {
-  return ITEMS.filter((i) => i.categoryId === categoryId);
 }

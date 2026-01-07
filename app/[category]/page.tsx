@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
-import { CATEGORIES, getCategory, getItems, Item } from "@/lib/data";
-import GridValueView from "@/components/layout-views/GridValueView";
-import ListIndexView from "@/components/layout-views/ListIndexView";
-import SectionalView from "@/components/layout-views/SectionalView";
+import { CATEGORIES, getCategory } from "@/src/constants/categories";
+import CategoryContent from "@/src/components/CategoryContent";
 
 // Generate static params for all categories to enable SSG
 export async function generateStaticParams() {
@@ -18,40 +16,29 @@ interface PageProps {
 export default async function CategoryPage({ params }: PageProps) {
   const { category: categoryId } = await params;
   const category = await getCategory(categoryId);
-  const items = await getItems(categoryId);
 
   if (!category) {
     notFound();
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       {/* Category Header */}
-      <header className={`w-full py-12 md:py-20 px-6 ${category.color} text-center`}>
-        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white tracking-tight drop-shadow-md">
+      <header
+        className={`w-full px-6 py-12 md:py-20 ${category.color} text-center`}
+      >
+        <h1 className="font-serif text-4xl font-bold tracking-tight text-white drop-shadow-md md:text-6xl">
           {category.label}
         </h1>
-        <p className="mt-4 text-white/60 uppercase tracking-widest text-xs font-medium">
+        <p className="mt-4 text-xs font-medium tracking-widest text-white/60 uppercase">
           {category.layout} View
         </p>
       </header>
 
       {/* Main Content Area */}
       <main className="flex-1 bg-neutral-950">
-        {renderLayout(category.layout, items)}
+        <CategoryContent category={category} />
       </main>
     </div>
   );
-}
-
-function renderLayout(layout: string, items: Item[]) {
-  switch (layout) {
-    case 'list':
-      return <ListIndexView items={items} />;
-    case 'sections':
-      return <SectionalView items={items} />;
-    case 'grid':
-    default:
-      return <GridValueView items={items} />;
-  }
 }
