@@ -62,7 +62,8 @@ async function processFile() {
   // We look for blocks containing id, title.
   // This is a naive regex parser but sufficient for this specific file structure.
 
-  const itemRegex = /{\s*id:[\s\S]*?}/g;
+  // We look for blocks containing categoryId or title, since 'id' is gone.
+  const itemRegex = /{\s*(?:\n\s*)?(?:categoryId|title):[\s\S]*?}/g;
   let match;
   let matches = [];
 

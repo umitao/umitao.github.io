@@ -1,8 +1,8 @@
-import { BrandItem } from "../types";
+import { BrandItem, RawItem } from "../types";
 
-export const brands: BrandItem[] = [
+export const brands: RawItem<BrandItem>[] = [
   {
-    id: "ab06799d-14e7-4a3a-9f7d-37d6668f51a2",
+
     categoryId: "brands",
     title: "Red Bull",
     group: "Love",
@@ -11,77 +11,77 @@ export const brands: BrandItem[] = [
       "Red Bull Gravity Challenge 2007. 2nd Place. Prize won: Red Bull as much as your weight. I measured around 60-65 kilos tops back then and I still do, but our friend who weighed around 100 kg sat on the scale, and it took 384 Red Bull cans to get him up in the scale.",
   },
   {
-    id: "66fed46b-9414-4726-9213-42476d672a4e",
+
     categoryId: "brands",
     title: "BMW",
     group: "Love",
     story: "The E46 era. Pure driving dynamics.",
   },
   {
-    id: "74f65c09-b0f5-4c50-b546-210af9b70caa",
+
     categoryId: "brands",
     title: "Nike",
     group: "Love",
     story: 'Iconic design language and the "Just Do It" spirit.',
   },
   {
-    id: "cfbbf979-58db-48d7-ae44-9f281d823bc3",
+
     categoryId: "brands",
     title: "Sony",
     group: "Hate",
     story: "The absolute masterclass in lifestyle marketing.",
   },
   {
-    id: "3713b687-938f-4a0f-9876-065e25a1ee35",
+
     categoryId: "brands",
     title: "Sony",
     group: "Love",
     story: "Evil company.",
   },
   {
-    id: "ef163c93-af09-4fcf-97b6-0904cbd1d27e",
+
     categoryId: "brands",
     title: "Fanatec",
     group: "Sim Racing",
     story: "German engineering for the sim.",
   },
   {
-    id: "9bda102e-88a8-4abd-a8b2-09d03e19274d",
+
     categoryId: "brands",
     title: "Martini",
     group: "Heritage",
     story: "Racing stripes and vermouth.",
   },
   {
-    id: "1a840723-023a-48e5-9f5b-260370e9745d",
+
     categoryId: "brands",
     title: "Lockheed Martin",
     group: "Aerospace",
     story: "Skunk Works. The SR-71.",
   },
   {
-    id: "7f05a656-8363-470e-b75a-0520a34f1e58",
+
     categoryId: "brands",
     title: "Apple",
     group: "Tech",
     story: "Ecosystem lock-in, but it works.",
   },
   {
-    id: "8230ac9e-9bd1-4c4d-9a2e-fdccc1c0f875",
+
     categoryId: "brands",
     title: "Sony",
     group: "Love",
     story: "Engineering excellence.",
   },
   {
-    id: "efcd0e5d-34be-4211-ae72-5c2918b270e3",
+
     categoryId: "brands",
     title: "LEGO",
     group: "Love",
     story: "Systematic creativity.",
   },
   {
-    id: "e5b994b0-79dd-4629-b1f7-ef6c803ab0da",
+
     categoryId: "brands",
     title: "HP",
     group: "Hate",

@@ -1,9 +1,10 @@
 import CategoryTile from "@/components/CategoryTile";
 import { CATEGORIES } from "@/lib/data";
+import VerificationSection from "@/src/components/VerificationSection";
 
 export default function Home() {
   return (
-    <div className="flex-1 w-full h-full p-2">
+    <div className="h-full w-full flex-1 p-2">
       {/* 
         Grid Layout:
         - Mobile: 1 column
@@ -13,7 +14,7 @@ export default function Home() {
         
         Using 'auto-rows' to ensure tiles have consistent height constraints but can grow.
       */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 w-full pb-10">
+      <div className="grid w-full grid-cols-1 gap-2 pb-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {CATEGORIES.map((cat) => (
           <CategoryTile
             key={cat.id}
@@ -24,6 +25,7 @@ export default function Home() {
           />
         ))}
       </div>
+      <VerificationSection />
     </div>
   );
 }

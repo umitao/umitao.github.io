@@ -145,3 +145,5 @@ export type AppItem =
   | WebsiteItem
   | QuoteItem
   | LanguageItem;
+
+export type RawItem<T> = Omit<T, "id">;
