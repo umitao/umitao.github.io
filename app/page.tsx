@@ -1,6 +1,5 @@
 import CategoryTile from "@/components/CategoryTile";
 import { CATEGORIES } from "@/src/constants/categories";
-import VerificationSection from "@/src/components/VerificationSection";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
           />
         ))}
       </div>
-      <VerificationSection />
     </div>
   );
 }
