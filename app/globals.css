@@ -3,7 +3,7 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
-  
+
   --font-inter: var(--font-inter);
   --font-playfair: var(--font-playfair);
 
@@ -13,6 +13,11 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+
+  /* Custom Breakpoints */
+  --breakpoint-xs: 30rem; /* 480px */
+  --breakpoint-3xl: 120rem; /* 1920px */
+  --breakpoint-4xl: 150rem; /* 2400px */
 }
 
 /* 
@@ -24,10 +29,10 @@
   /* DARK MODE (DEFAULT) */
   --background: #0a0a0a;
   --foreground: #ededed;
-  
+
   --muted: #171717;
   --muted-foreground: #a1a1aa;
-  
+
   --border: #262626;
 }
 
@@ -47,7 +52,9 @@ body {
   background: var(--background);
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
-  transition: color 0.3s, background-color 0.3s; /* Smooth theme switch */
+  transition:
+    color 0.3s,
+    background-color 0.3s; /* Smooth theme switch */
 }
 
 /* Custom Scrollbar for subtle elegance */
