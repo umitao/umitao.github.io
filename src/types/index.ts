@@ -147,3 +147,20 @@ export type AppItem =
   | LanguageItem;
 
 export type RawItem<T> = Omit<T, "id">;
+
+// Edge types for item relationships
+export type EdgeType =
+  | "associated_with"
+  | "directed_by"
+  | "created_by"
+  | "used_by"
+  | "from_era"
+  | "relates_to"
+  | "inspired_by"
+  | "part_of";
+
+export interface Edge {
+  sourceId: string;
+  targetId: string;
+  type: EdgeType;
+}
